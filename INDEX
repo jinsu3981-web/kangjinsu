@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모님을 위한 따뜻한 동행 - 방문요양·방문목욕 서비스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#badffd',
+                            300: '#7cc2fc',
+                            400: '#36a2f8',
+                            500: '#0c87eb',
+                            600: '#0269ca',
+                            700: '#0354a4',
+                            800: '#084886',
+                            900: '#0d3d6f',
+                        },
+                        warm: {
+                            50: '#fffbf7',
+                            100: '#ffefdb',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans KR', 'sans-serif'],
+                        body: ['Noto Sans KR', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fcfcfc;
+            color: #1f2937;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0c87eb 0%, #0354a4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Section 1: Hero / Hooking -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-900">
+        <div class="absolute inset-0 z-0">
+            <img src="https://opal.google/board/blobs/fd20c894-d80b-4c6b-a691-debcd7f36422" alt="부모님의 모습" class="w-full h-full object-cover opacity-40 scale-105 transition-transform duration-10000 hover:scale-100">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-900/60 via-transparent to-brand-900"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center animate-fade-in-up">
+            <span class="inline-block py-1 px-4 rounded-full bg-brand-500/20 border border-brand-400/30 text-brand-100 text-sm font-semibold mb-6 backdrop-blur-md">
+                Senior Care Premium Service
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                "부모님만 두고 출근하는 발걸음,<br/>오늘도 <span class="text-brand-300">무거우셨나요?</span>"
+            </h1>
+            <p class="text-lg md:text-xl text-brand-100/90 max-w-2xl mx-auto leading-relaxed mb-10">
+                혼자 계실 부모님의 식사, 제시간에 챙겨드셔야 할 약, 그리고 긴 하루 동안 느끼실 적적함...<br/>
+                자녀분의 마음을 알기에 <span class="font-bold text-white">[센터이름]</span>이 그 곁을 정성으로 채우겠습니다.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="tel:010-XXXX-XXXX" class="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-white rounded-2xl font-bold shadow-xl transition-all hover:-translate-y-1 active:scale-95 text-center">
+                    지금 바로 상담하기
+                </a>
+                <div class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-2xl font-bold backdrop-blur-md transition-all text-center">
+                    미안함 대신 안심을 선택하세요
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Benefits (Infographic) -->
+    <section class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://opal.google/board/blobs/a6ff5400-1eeb-4715-a69a-f78efaef743f" alt="국가 지원 혜택 인포그래픽" class="w-full h-auto rounded-3xl shadow-2xl animate-float">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+                        전문가의 도움, <br/>
+                        <span class="gradient-text">비용 부담은 정부가 덜어드립니다!</span>
+                    </h2>
+                    <p class="text-slate-600 mb-8 text-lg">
+                        노인장기요양보험 제도를 통해 <span class="font-bold text-brand-600">국가 지원 85% ~ 100%</span>를 받으실 수 있습니다.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center p-5 bg-brand-50 rounded-2xl border border-brand-100 group hover:border-brand-300 transition-colors">
+                            <div class="w-12 h-12 flex items-center justify-center bg-white rounded-xl shadow-sm mr-4 text-brand-500 font-bold">15%</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">일반 어르신</h4>
+                                <p class="text-slate-500 text-sm">본인부담금 15%</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-5 bg-warm-50 rounded-2xl border border-warm-100 group hover:border-warm-500 transition-colors">
+                            <div class="w-12 h-12 flex items-center justify-center bg-white rounded-xl shadow-sm mr-4 text-warm-500 font-bold">6~9%</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">감경 대상자</h4>
+                                <p class="text-slate-500 text-sm">본인부담금 6% ~ 9%</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-5 bg-blue-600 rounded-2xl text-white shadow-lg shadow-blue-200 group transform transition-transform hover:scale-[1.02]">
+                            <div class="w-12 h-12 flex items-center justify-center bg-white/20 rounded-xl mr-4 font-bold">0%</div>
+                            <div>
+                                <h4 class="font-bold">기초생활수급자</h4>
+                                <p class="text-blue-100 text-sm italic">전액 무료(0%)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-slate-500 text-sm flex items-start gap-2">
+                        <svg class="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        하루 몇 천 원의 비용으로 우리 부모님께 전문가의 섬세한 케어를 선물하세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Detailed Services (The Bento Way) -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">상세 서비스 안내</h2>
+                <div class="h-1.5 w-24 bg-brand-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Service Card: Visit Care -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+                <div class="lg:col-span-5 rounded-3xl overflow-hidden shadow-2xl min-h-[400px] relative group">
+                    <img src="https://opal.google/board/blobs/b3b8f59c-50fe-42ed-ad3f-65e591a3b2c0" alt="방문요양 활동 사진" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-2">[방문요양]</h3>
+                            <p class="text-white/80">내 집에서 받는 편안한 1:1 맞춤 케어</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center mb-4 font-bold">01</div>
+                        <h4 class="text-lg font-bold mb-2">신체활동 지원</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">식사 보조, 세면/목욕 도움, 체위 변경, 이동 도움을 통해 일상의 활력을 드립니다.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 font-bold">02</div>
+                        <h4 class="text-lg font-bold mb-2">가사활동 지원</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">부모님 생활 공간 청소, 취사, 세탁 등 주변 정돈으로 쾌적한 환경을 유지합니다.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4 font-bold">03</div>
+                        <h4 class="text-lg font-bold mb-2">개인활동 지원</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">병원 및 외출 동행(산책, 장보기), 약 타오기 등 외부 활동의 든든한 동반자가 됩니다.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-lg flex items-center justify-center mb-4 font-bold">04</div>
+                        <h4 class="text-lg font-bold mb-2">정서 지원</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">말벗 서비스, 안부 확인, 심리적 안정감 제공으로 마음의 외로움을 치유합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card: Bath Care -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-slate-900 flex items-center gap-3">
+                        <span class="w-2 h-10 bg-brand-500 rounded-full"></span>
+                        [방문목욕] 기분까지 개운하게
+                    </h3>
+                    <p class="text-slate-600 mb-8">안전한 위생 관리를 위해 전문가가 직접 찾아갑니다.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="p-1 bg-brand-100 rounded-full text-brand-600 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold">2인 1조 방문</p>
+                                <p class="text-sm text-slate-500">전문 요양보호사 2인이 방문하여 낙상 사고를 완벽하게 예방합니다.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="p-1 bg-brand-100 rounded-full text-brand-600 mt-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold">철저한 위생 관리</p>
+                                <p class="text-sm text-slate-500">이동식 욕조 및 전문 장비를 활용해 구석구석 꼼꼼하게 관리합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 order-1 md:order-2">
+                    <img src="https://opal.google/board/blobs/980b4891-22ca-4c1d-aaeb-92a371861b7b" alt="방문목욕 장비 및 서비스 사진" class="w-full h-auto rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Strengths -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-500 font-bold tracking-widest uppercase text-sm">Why Us?</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-2">우리 센터만의 특별한 강점</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group p-8 bg-brand-50 rounded-3xl border border-brand-100 hover:bg-brand-500 transition-all duration-500">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">검증된 전문 인력</h4>
+                    <p class="text-slate-600 leading-relaxed group-hover:text-brand-50 transition-colors">
+                        국가 자격증은 기본! 정기적인 인성 교육과 직무 교육을 마친 베테랑 요양보호사만 함께합니다.
+                    </p>
+                </div>
+                <div class="group p-8 bg-slate-50 rounded-3xl border border-slate-200 hover:bg-brand-500 transition-all duration-500">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">까다로운 맞춤 매칭</h4>
+                    <p class="text-slate-600 leading-relaxed group-hover:text-brand-50 transition-colors">
+                        어르신의 성향, 건강 상태, 생활 패턴을 분석하여 가장 잘 맞는 선생님을 매칭해 드립니다.
+                    </p>
+                </div>
+                <div class="group p-8 bg-brand-50 rounded-3xl border border-brand-100 hover:bg-brand-500 transition-all duration-500">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">철저한 사후 관리</h4>
+                    <p class="text-slate-600 leading-relaxed group-hover:text-brand-50 transition-colors">
+                        사회복지사가 주기적으로 방문하여 서비스 품질을 모니터링하고 가족분들께 상세히 공유합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Process -->
+    <section class="py-24 bg-brand-900 text-white overflow-hidden relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">이용 절차 안내</h2>
+                <p class="text-brand-300">신청부터 케어까지 전문가가 함께합니다.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connectors for Desktop -->
+                <div class="hidden md:block absolute top-12 left-1/4 right-12 h-0.5 bg-brand-700/50 -z-0"></div>
+                
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-brand-500 rounded-full flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-brand-500/20 border-4 border-brand-900">1</div>
+                    <h4 class="text-lg font-bold mb-2">전화 상담</h4>
+                    <p class="text-sm text-brand-200">서비스 내용 및 등급<br/>유무를 확인합니다.</p>
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-brand-600 rounded-full flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-brand-500/20 border-4 border-brand-900">2</div>
+                    <h4 class="text-lg font-bold mb-2">무료 등급 신청 대행</h4>
+                    <p class="text-sm text-brand-200">서류 접수부터 방문 조사까지<br/>전문가가 동행합니다.</p>
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-brand-700 rounded-full flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-brand-500/20 border-4 border-brand-900">3</div>
+                    <h4 class="text-lg font-bold mb-2">방문 상담 및 계약</h4>
+                    <p class="text-sm text-brand-200">어르신 댁을 방문해<br/>최적의 플랜을 수립합니다.</p>
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-brand-400 rounded-full flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-brand-400/20 border-4 border-brand-900">4</div>
+                    <h4 class="text-lg font-bold mb-2">매칭 및 서비스 시작</h4>
+                    <p class="text-sm text-brand-200">엄선된 요양보호사가 배치되어<br/>정성 어린 케어를 시작합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: CTA / Contact -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-br from-brand-50 to-brand-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="w-full lg:w-1/2 p-12 flex flex-col justify-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                            "더 이상 혼자 고민하지 마세요. <br/>
+                            <span class="text-brand-600">부모님의 미소가 자녀분의 행복입니다.</span>"
+                        </h2>
+                        <p class="text-slate-600 mb-8 text-lg">
+                            지금 바로 전화주시면 장기요양등급 신청 방법부터 <br/>
+                            친절하고 상세하게 안내해 드리겠습니다.
+                        </p>
+                        
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-200 mb-10">
+                            <p class="text-brand-500 font-bold text-sm mb-1">24시간 연중무휴 상담 가능</p>
+                            <a href="tel:010-XXXX-XXXX" class="text-3xl md:text-4xl font-extrabold text-slate-900 hover:text-brand-600 transition-colors">
+                                010-XXXX-XXXX
+                            </a>
+                            <p class="mt-4 text-slate-500 flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                                OO시 OO구 OO동 (상세주소)
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <a href="tel:010-XXXX-XXXX" class="flex items-center justify-center gap-2 px-6 py-4 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg active:scale-95">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 005.47 5.47l.773-1.548a1 1 0 011.06-.539l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                                전화로 바로 문의하기
+                            </a>
+                            <button class="flex items-center justify-center gap-2 px-6 py-4 bg-warm-500 text-white rounded-xl font-bold hover:bg-warm-600 transition-all shadow-lg active:scale-95">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.5c0 5.8-5.3 10.5-12 10.5-.7 0-1.4 0-2.1-.1l-5.7 3.9c-.3.2-.6.2-.8 0-.2-.1-.3-.4-.2-.6l1.1-4.2C1.7 18.8 0 15.3 0 11.5 0 5.2 5.4 0 12 0s12 5.2 12 11.5z"></path></svg>
+                                카카오톡 1:1 상담
+                            </button>
+                        </div>
+                        <button class="mt-4 w-full px-6 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            무료 등급 신청 가이드 다운로드
+                        </button>
+                    </div>
+                    <div class="w-full lg:w-1/2 min-h-[400px]">
+                        <img src="https://opal.google/board/blobs/404a78fc-85f2-4446-83d8-f774eff5aa8d" alt="상담원의 밝은 미소" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
